@@ -1,38 +1,47 @@
-from flask import Flask, render_template_string
-
-app = Flask(__name__)
-
-@app.route('/')
-def contact():
-    contact_page = """
     <!DOCTYPE html>
-    <html>
+    <html lang="fr">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
-                text-align: center;
-                padding: 50px;
-                background-color: #f9f9f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: #f4f4f4;
             }
             .contact-card {
-                display: inline-block;
-                padding: 20px;
+                background: #fff;
                 border: 1px solid #ddd;
                 border-radius: 8px;
-                background-color: #fff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px 30px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                max-width: 400px;
+                width: 100%;
             }
             h1 {
-                margin: 0 0 10px;
                 font-size: 24px;
                 color: #333;
+                margin-bottom: 10px;
             }
             p {
-                margin: 5px 0;
                 font-size: 18px;
                 color: #555;
+                margin: 5px 0;
+            }
+            a {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            a:hover {
+                text-decoration: underline;
             }
         </style>
     </head>
@@ -40,7 +49,7 @@ def contact():
         <div class="contact-card">
             <h1>Contact</h1>
             <p><strong>Nom :</strong> Aribi Ryad</p>
-            <p><strong>Email :</strong> raribi1@myges.fr</p>
+            <p><strong>Email :</strong> <a href="mailto:raribi1@myges.fr">raribi1@myges.fr</a></p>
         </div>
     </body>
     </html>
