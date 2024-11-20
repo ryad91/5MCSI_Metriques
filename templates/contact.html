@@ -1,1 +1,51 @@
+from flask import Flask, render_template_string
 
+app = Flask(__name__)
+
+@app.route('/')
+def contact():
+    contact_page = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Contact</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 50px;
+                background-color: #f9f9f9;
+            }
+            .contact-card {
+                display: inline-block;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                margin: 0 0 10px;
+                font-size: 24px;
+                color: #333;
+            }
+            p {
+                margin: 5px 0;
+                font-size: 18px;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contact-card">
+            <h1>Contact</h1>
+            <p><strong>Nom :</strong> Aribi Ryad</p>
+            <p><strong>Email :</strong> raribi1@myges.fr</p>
+        </div>
+    </body>
+    </html>
+    """
+    return render_template_string(contact_page)
+
+if __name__ == '__main__':
+    app.run(debug=True)
